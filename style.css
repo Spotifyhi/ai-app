@@ -1,0 +1,77 @@
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#1e1e2f;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Side Menu */
+#menuBtn{
+  position:fixed;
+  top:20px; left:20px;
+  font-size:30px;
+  cursor:pointer;
+  color:#00ffe0;
+  z-index:1100;
+  transition:0.3s;
+}
+#menuBtn:hover{transform:scale(1.2);}
+
+#sideMenu{
+  position:fixed;
+  top:0; left:-250px;
+  width:250px; height:100%;
+  background:linear-gradient(160deg,#00ffe0,#006064);
+  padding-top:60px;
+  transition:0.5s;
+  box-shadow:5px 0 15px rgba(0,0,0,0.5);
+  z-index:1000;
+}
+#sideMenu.active{left:0;}
+#sideMenu a{
+  display:block;
+  padding:15px 25px;
+  font-size:18px;
+  color:#fff;
+  text-decoration:none;
+  margin:10px;
+  border-radius:8px;
+  opacity:0;
+  transform:translateX(-20px);
+  transition:0.3s;
+}
+#sideMenu.active a{opacity:1; transform:translateX(0);}
+#sideMenu a:hover{background:rgba(255,255,255,0.1); transform:scale(1.05);}
+
+/* Main Content */
+#main{padding:20px;}
+.screen{display:none;}
+.screen.active{display:block;}
+
+/* Chat */
+.chat-messages{
+  max-height:65vh;
+  overflow-y:auto;
+  margin-bottom:10px;
+  border:1px solid #00ffe0;
+  padding:10px;
+  border-radius:8px;
+}
+.chat-messages div{margin:5px 0;}
+.user{color:#00ffe0;}
+.ai{color:#fffb00;}
+#chatInput{width:70%; padding:10px; border-radius:6px; border:none; margin-right:5px;}
+button{padding:10px 15px; border:none; border-radius:6px; background:#00ffe0; color:#000; cursor:pointer; transition:0.2s;}
+button:hover{background:#00ffbf;}
+
+/* Shop/Groups/Team */
+.shop-item,.cart-items div,.group-item,.info-btn{
+  background:rgba(255,255,255,0.1);
+  margin:5px 0;
+  padding:10px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.2s;
+}
+.shop-item:hover,.group-item:hover,.info-btn:hover{background:rgba(255,255,255,0.2);}

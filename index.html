@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head><link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.log('Service Worker failed', err));
+  }
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile AI App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Side Menu Button -->
+<div id="menuBtn">&#x25B6;</div>
+
+<!-- Side Menu -->
+<div id="sideMenu">
+  <a href="#" onclick="showScreen('chat')">💬 Chat</a>
+  <a href="#" onclick="showScreen('shop')">🛍️ Shop</a>
+  <a href="#" onclick="showScreen('groups')">🤝 Gruppen</a>
+  <a href="#" onclick="showTeam()">👤 Team</a>
+</div>
+
+<!-- Main Content -->
+<div id="main">
+  <!-- Chat Screen -->
+  <div id="chat" class="screen active">
+    <div id="chatMessages" class="chat-messages"></div>
+    <input type="text" id="chatInput" placeholder="Schreibe hier..." />
+    <button onclick="sendMessage()">Senden</button>
+  </div>
+
+  <!-- Shop Screen -->
+  <div id="shop" class="screen">
+    <h2>🛍️ Shop</h2>
+    <div id="shop-items"></div>
+    <h3>Warenkorb:</h3>
+    <div id="cart-items"></div>
+  </div>
+
+  <!-- Gruppen Screen -->
+  <div id="groups" class="screen">
+    <h2>🤝 Gruppen</h2>
+    <div id="groups-list"></div>
+  </div>
+
+  <!-- Team Screen -->
+  <div id="team" class="screen">
+    <h2>👤 Team</h2>
+    <div id="info-text"></div>
+    <div id="info-buttons"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
